@@ -1,0 +1,70 @@
+{
+  "name": "hq",
+  "version": "0.1.0",
+  "description": "head quarters",
+  "main": "dist/app.js",
+  "directories": {
+    "app": "app",
+    "dist": "dist",
+    "doc": "doc",
+    "test": "test"
+  },
+  "keywords": [
+    "angular",
+    "d3",
+    "data visualisation"
+  ],
+  "scripts": {
+    "test": "grunt build",
+    "start": "http-server --port 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulhhowells/hq.git"
+  },
+  "author": "paulhhowells",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paulhhowells/hq/issues"
+  },
+  "homepage": "https://github.com/paulhhowells/hq#readme",
+  "dependencies": {
+    "angular": "^1.5.6",
+    "angular-route": "^1.5.6",
+    "d3": "^3.5.17",
+    "jquery": "^2.2.4"
+  },
+  "devDependencies": {
+    "angular-animate": "^1.5.6",
+    "angular-mocks": "^1.5.6",
+    "del": "^2.2.0",
+    "eslint": "^2.11.1",
+    "graceful-fs": "^4.1.4",
+    "gulp": "^3.9.1",
+    "gulp-add-src": "^0.2.0",
+    "gulp-angular-templatecache": "^1.8.0",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-concat": "^2.6.0",
+    "gulp-coverage": "^0.3.38",
+    "gulp-eslint": "^2.0.0",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-iife": "^0.3.0",
+    "gulp-insert": "^0.5.0",
+    "gulp-istanbul": "^0.10.4",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-ngdocs": "^0.2.13",
+    "gulp-open": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "http-server": "^0.9.0",
+    "jasmine-core": "^2.4.1",
+    "jasmine-data-provider": "^2.2.0",
+    "karma": "^0.13.22",
+    "karma-coverage": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.7"
+  }
+}
