@@ -1,0 +1,21 @@
+[Tt]humbs.db
+.Trashes
+.DS_Store
+.DS_Store?
+
+report
+test/report
+
+__*
+.tmp
+
+# Ignore Node & NPM
+node_modules
+npm-debug.log
+
+# Ignore PHP/Web Storm
+.idea
+
+# Ignore Codekit
+*.codekit
+.codekit*
