@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Head Quarters</title>
+    <link rel="stylesheet" href="dist/css/app.css" media="screen" title="Default" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+  <style type="text/css">
+    pod {display: block;}
+  </style>
+
+  </head>
+  <body>
+    <div class="wensleydale">
+      <div class="wrapper">TEST</div>
+    </div>
+    <div class="cheshire wrapper">
+      <h1>Head Quarters</h1>
+      <div class="ng-cloak" data-ng-app="app"  data-ng-strict-di>
+        <div data-ng-controller="MainController as main">
+          <div>
+            <a href="#/display">Display</a> |
+            <a href="#/settings">Settings</a>
+          </div>
+
+          <div data-ng-view></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/d3/d3.js" charset="utf-8"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script type="text/javascript">
+      // Enable the app to be available at a URL that is not the root of the
+      // domain, when html5Mode is true or false. e.g. abc.com/d/e/
+      angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+    </script>
+    <script src="dist/app.js" charset="utf-8"></script>
+  </body>
+</html>
