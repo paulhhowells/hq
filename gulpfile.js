@@ -119,14 +119,14 @@ gulp.task('doc', ['readme'], function () {
   // https://github.com/idanush/ngdocs/wiki/API-Docs-Syntax
 
   var options = {
-    scripts : [
-      '../../node_modules/angular/angular.min.js',
-      '../../node_modules/angular/angular.min.js.map',
-      '../../node_modules/angular-route/angular-route.min.js',
-      '../../node_modules/angular-route/angular-route.min.js.map',
-      '../../node_modules/angular-animate/angular-animate.min.js',
-      '../../node_modules/angular-animate/angular-animate.min.js.map'
-    ],
+    // scripts : [
+    //   '../../node_modules/angular/angular.min.js',
+    //   '../../node_modules/angular/angular.min.js.map',
+    //   '../../node_modules/angular-route/angular-route.min.js',
+    //   '../../node_modules/angular-route/angular-route.min.js.map',
+    //   '../../node_modules/angular-animate/angular-animate.min.js',
+    //   '../../node_modules/angular-animate/angular-animate.min.js.map'
+    // ],
     html5Mode : false,
     title : 'D3 Angular',
     // titleLink : '/api',
