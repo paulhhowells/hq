@@ -42,7 +42,7 @@
     "graceful-fs": "^4.1.4",
     "gulp": "^3.9.1",
     "gulp-add-src": "^0.2.0",
-    "gulp-angular-templatecache": "^1.8.0",
+    "gulp-angular-templatecache": "github:paulhhowells/gulp-angular-templatecache",
     "gulp-clean-css": "^2.0.10",
     "gulp-concat": "^2.6.0",
     "gulp-coverage": "^0.3.38",
