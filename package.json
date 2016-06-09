@@ -2,13 +2,7 @@
   "name": "hq",
   "version": "0.1.0",
   "description": "head quarters",
-  "main": "dist/app.js",
-  "directories": {
-    "app": "app",
-    "dist": "dist",
-    "doc": "doc",
-    "test": "test"
-  },
+  "main": "dist/app.min.js",
   "keywords": [
     "angular",
     "d3",
