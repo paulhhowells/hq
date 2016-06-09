@@ -15,7 +15,7 @@
     "data visualisation"
   ],
   "scripts": {
-    "test": "grunt build",
+    "test": "gulp test",
     "start": "http-server --port 8000"
   },
   "repository": {
