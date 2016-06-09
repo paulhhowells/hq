@@ -5,6 +5,7 @@
 
 report
 test/report
+src/app/index.ngdoc
 
 __*
 .tmp
