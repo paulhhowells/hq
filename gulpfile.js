@@ -415,8 +415,8 @@ function sass () {
     );
 }
 
-gulp.task('build', ['clean-dist', 'html', 'angular', 'clean-tmp']);
+gulp.task('build', ['clean-dist', 'html', 'angular', 'scss', 'clean-tmp']);
 
 gulp.task('default', function () {
-  gulp.start('clean-coverage', 'lint', 'test', 'doc', 'build', 'scss');
+  gulp.start('clean-coverage', 'lint', 'test', 'doc', 'build');
 });
