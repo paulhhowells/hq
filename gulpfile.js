@@ -29,8 +29,8 @@ const
 
 const PATH = {
   app : 'src/app',
-  appJS : this.app + '/**/!(*spec|*test).js',
-  appDoc : this.app + '/index.ngdoc',
+  appJS : 'src/app/**/!(*spec|*test).js',
+  appDoc : 'src/app/index.ngdoc',
   coverage : 'test/report/coverage',
   css : 'dist/css',
   distribution : 'dist',
