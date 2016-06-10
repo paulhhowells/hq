@@ -215,19 +215,19 @@ gulp.task('angular', ['html'], function () {
     // Should not remove IIFEs that do not wrap files.
     /* Breakdown of regex:
       \                           start regex
-      ^                           match start of file
-      \(function\s*\(\)\s*\{      start of IIFE (function () {
+      ^                           start of file
+      \(function\s*\(\)\s*\{      start of IIFE: (function () {
       \s*                         0 or more spaces
-                                  0 or more instances of 'use strict';
-      (?:                         noncapture
+
+      (                           0 or more instances of 'use strict';
+      ?:                          noncapture
       'use strict';
       )*
 
       ([\s\S]+)                   capture anything in the middle
-
-                                  match tail of IIFE as })(); or }());
-      \}(?:\)\(|\(\))\);\s*
-      $                           match end of file
+      \}(?:\)\(|\(\))\);          tail of IIFE as })(); or }());
+      \s*                         0 or more spaces
+      $                           end of file
       /g                          end regex
     */
     .pipe(
