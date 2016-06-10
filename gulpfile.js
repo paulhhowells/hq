@@ -213,16 +213,11 @@ gulp.task('angular', ['html'], function () {
 
     // Remove IIFEs that wrap files, and any use of 'use strict'.
     // Should not remove IIFEs that do not wrap files.
-    // .pipe(plug.replace(/^\(function\s*\(\)\s*\{\s*('use strict';)*/, ''))
-    // Match tail of IIFE as })(); or }());
-    // .pipe(plug.replace(/\}(?:\)\(|\(\))\);\s*$/, ''))
-
-    // Remove IIFEs that wrap files, and any use of 'use strict'.
     /* Breakdown of regex:
       \                           start regex
       ^                           match start of file
-      \(function\s*\(\)\s*\{\s*   start of IIFE
-
+      \(function\s*\(\)\s*\{      start of IIFE (function () {
+      \s*                         0 or more spaces
                                   0 or more instances of 'use strict';
       (?:                         noncapture
       'use strict';
