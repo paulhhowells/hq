@@ -211,7 +211,7 @@ gulp.task('angular', ['html'], function () {
 
   return gulp.src([appModule, appFiles, templates])
 
-    // Remove IIFEs that wrap files, and any use of 'use strict'.
+    // Remove IIFEs that wrap files, and any use of 'use strict' within them.
     // Should not remove IIFEs that do not wrap files.
     /* Breakdown of regex:
       \                           start regex
