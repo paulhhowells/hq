@@ -228,7 +228,7 @@ gulp.task('angular', ['html'], function () {
       \}(?:\)\(|\(\))\);          tail of IIFE as })(); or }());
       \s*                         0 or more spaces
       $                           end of file
-      /g                          end regex
+      /g                          end regex, with global modifier
     */
     .pipe(
       plug.replace(/^\(function\s*\(\)\s*\{\s*(?:'use strict';)*([\s\S]+)\}(?:\)\(|\(\))\);\s*$/g, '$1')
