@@ -6,4 +6,25 @@
   <p>
     Hello {{ settings.user.name }}
   </p>
+
+  <ul>
+    <li data-ng-repeat="widget in settings.widget.displayList.get() track by $index">
+      {{ widget.id }} {{ settings.feed[ widget.id ].name }} {{ widget.selected }}
+      <button data-ng-click="settings.widget.displayList.dec( widget.id )">UP</button>
+      <button data-ng-click="settings.widget.displayList.inc( widget.id )">DOWN</button>
+      <input
+        type="checkbox"
+        data-ng-model="widget.selected"
+        data-ng-change="settings.widget.selectionChange( widget.id )" />
+    </li>
+  </ul>
+  <ul>
+    <li data-ng-repeat="widget in settings.widget.filter.getUnselected() track by $index">
+      {{ widget.id }} {{ settings.feed[ widget.id ].name }}
+      <input
+        type="checkbox"
+        data-ng-model="widget.selected"
+        data-ng-change="settings.widget.selectionChange( widget.id )" />
+    </li>
+  </ul>
 </div>
