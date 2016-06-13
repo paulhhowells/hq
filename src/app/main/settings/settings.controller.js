@@ -12,14 +12,17 @@
     .module('app')
     .controller('SettingsController', SettingsController);
 
-  SettingsController.$inject = ['$scope', 'user'];
 
-  function SettingsController ($scope, user) {
+  SettingsController.$inject = ['$scope', 'feed', 'widget', 'user'];
+
+  function SettingsController ($scope, feed, widget, user) {
 
     // View Model.
     var vm = this;
 
     vm.title = 'Settings';
+    vm.feed = feed;
+    vm.widget = widget;
     vm.user = user;
 
     $scope.$on('$routeChangeSuccess', function(event) {
