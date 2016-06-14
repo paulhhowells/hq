@@ -16,6 +16,10 @@
         type="checkbox"
         data-ng-model="widget.selected"
         data-ng-change="settings.widget.selectionChange( widget.id )" />
+      <select
+        data-ng-model="widget.display"
+        data-ng-options="item.id as item.label for item in settings.widget.displayOptions">
+      </select>
     </li>
   </ul>
   <ul>

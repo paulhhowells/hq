@@ -25,6 +25,11 @@
           inc : displayListInc,
           dec : displayListDec
         },
+        displayOptions : [
+          { id : 'pie', label : 'Pie' },
+          { id : 'bar', label : 'Bar' },
+          { id : 'gauge', label : 'Gauge' }
+        ],
         filter : {
           getSelected : getFilterSelected,
           getUnselected : getFilterUnselected
@@ -50,18 +55,21 @@
       updateDisplayList(id);
     }
 
+    function newWidget (id) {
+      return {
+        id : id,
+        display : service.displayOptions[0].id,
+        selected : true
+      };
+    }
+
     function addWidgetToCore (id) {
       var
         total,
         widget;
 
       if (!coreIndex.hasOwnProperty(id)) {
-        widget = {
-          id : id, // feed ID
-          display : 'pie',
-          selected : true
-        };
-
+        widget = newWidget(id);
         total = core.push(widget);
         coreIndex[id] = total - 1;
       }
