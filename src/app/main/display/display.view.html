@@ -7,4 +7,9 @@
     data-ng-repeat="id in display.pod.list"
     data-config="display.pod.id[id]"></pod>
 
+  <ul>
+    <li data-ng-repeat="widget in display.getWidgets() track by $index">
+      {{ widget.id }} {{ display.feed[ widget.id ].name }} {{ widget.display }}
+    </li>
+  </ul>
 </div>
