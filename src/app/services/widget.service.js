@@ -22,6 +22,7 @@
       service = {
         displayList : {
           get : getDisplayList,
+          getWithFiller : getDisplayListWithFiller,
           inc : displayListInc,
           dec : displayListDec
         },
@@ -180,6 +181,18 @@
 
     function getDisplayList () {
       return displayList;
+    }
+
+    function getDisplayListWithFiller () {
+      var
+        fill = { display : 'filler' },
+        filler = [
+          fill,
+          fill,
+          fill
+        ];
+
+      return [].concat(getDisplayList(), filler);
     }
 
     function getCore () {
