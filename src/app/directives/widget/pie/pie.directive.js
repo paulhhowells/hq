@@ -11,7 +11,7 @@ function pieDirective ($compile, metrics) {
     restrict : 'AE',
     controllerAs: 'pie',
     controller : PieController,
-    templateUrl : '/directives/pod/pie/pie.directive.html',
+    templateUrl : '/directives/widget/pie/pie.directive.html',
     link : link
   };
 

@@ -9,7 +9,7 @@ function barDirective ($compile, metrics) {
     restrict : 'AE',
     controllerAs: 'bar',
     controller : ['$scope', '$element', '$attrs', BarController],
-    templateUrl : '/directives/pod/bar/bar.directive.html',
+    templateUrl : '/directives/widget/bar/bar.directive.html',
     link : link
   };
 
