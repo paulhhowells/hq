@@ -1,0 +1,31 @@
+.wrapper {
+  // 60em   960px @ 16px
+  // 62.5em 1000px @ 16px
+  width: 60em;
+
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #eee;
+  overflow: hidden;
+}
+// 100em  1600px @ 16px
+@media only screen and (min-width: 100em) {
+  .wrapper {
+    font-size: 1.125em;
+  }
+}
+
+/* max-width = .wrapper width + padding */
+// 62em   992px @ 16px
+// 64em   1024px @ 16px
+// use min-device-width? - target devices instead of desktop.
+@media only screen and (max-width: 64em) {
+  .wrapper {
+    width: auto;
+    margin: 0 0;
+  }
+}
+
+/*
+Hi @petebd, do you have any hunches for if/when the new Angular 2 Router might be backported to Angular 1?
+*/
