@@ -1,14 +1,14 @@
 (function() {
   'use strict';
 
-  // todo: rename preferences
-
   /**
    * @ngdoc     controller
    * @name      app.controller:PreferencesController
+   * @requires  {object}  $scope  $scope
    * @requires  {object}  feed  The feed service
+   * @requires  {object}  widget  The widget service
    * @description
-   *   The Preferences Controller.
+   *   Controller for the Preferences view.
    **/
   angular
     .module('app')
