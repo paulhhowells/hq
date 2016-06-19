@@ -26,7 +26,7 @@
     display.widget = widget;
     display.feed = feed;
     display.user = user;
-    display.pod = settings.pod;
+    display.pod = preferences.pod;
 
 
     displayList = widget.displayList.getWithFiller();
