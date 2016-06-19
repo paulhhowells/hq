@@ -3,22 +3,22 @@
 
   /**
    * @ngdoc service
-   * @name app.service:settings
+   * @name app.service:preferences
    * @description
-   *   Provides a model of the settings.
+   *   Provides a model of the preferences.
    */
   angular
     .module('app')
-    .factory('settings', settings);
+    .factory('preferences', preferencesFactory);
 
-  function settings () {
+  function preferencesFactory () {
     var
-      settings = {},
+      preferences = {},
       // Constants.
       BAR = 'bar',
       PIE = 'pie';
 
-    settings.pod = {
+    preferences.pod = {
       list : ['x', 'y', 'z'],
       id : {
         x : { name : 'Weather', type : PIE, metric : 'weather'},
@@ -27,6 +27,6 @@
       }
     };
 
-    return settings;
+    return preferences;
   }
 })();

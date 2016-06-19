@@ -1,0 +1,35 @@
+<div>
+  Settings HTML
+
+  <h2>{{ ::preferences.title }}</h2>
+
+  <p>
+    Hello {{ preferences.user.name }}
+  </p>
+
+  <h3>Widget list Selections</h3>
+  <ul>
+    <li data-ng-repeat="widget in preferences.widget.displayList.get() track by $index">
+      {{ widget.id }} {{ preferences.feed[ widget.id ].name }} {{ widget.selected }}
+      <button data-ng-click="preferences.widget.displayList.dec( widget.id )">UP</button>
+      <button data-ng-click="preferences.widget.displayList.inc( widget.id )">DOWN</button>
+      <input
+        type="checkbox"
+        data-ng-model="widget.selected"
+        data-ng-change="preferences.widget.selectionChange( widget.id )" />
+      <select
+        data-ng-model="widget.display"
+        data-ng-options="item.id as item.label for item in preferences.widget.displayOptions">
+      </select>
+    </li>
+  </ul>
+  <ul>
+    <li data-ng-repeat="widget in preferences.widget.filter.getUnselected() track by $index">
+      {{ widget.id }} {{ preferences.feed[ widget.id ].name }} {{ widget.display }}
+      <input
+        type="checkbox"
+        data-ng-model="widget.selected"
+        data-ng-change="preferences.widget.selectionChange( widget.id )" />
+    </li>
+  </ul>
+</div>
