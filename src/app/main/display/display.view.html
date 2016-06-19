@@ -5,11 +5,15 @@
 
   <pod
     data-ng-repeat="id in display.pod.list"
-    data-config="display.pod.id[id]"></pod>
+    data-config="display.pod.id[ id ]"></pod>
 
-  <ul>
-    <li data-ng-repeat="widget in display.getWidgets() track by $index">
-      {{ widget.id }} {{ display.feed[ widget.id ].name }} {{ widget.display }}
-    </li>
-  </ul>
+  <div class="pods">
+    <widget
+      class="pod"
+      data-ng-repeat="widget in display.getWidgets() track by $index"
+      data-config="widget"
+      data-feed="display.feed[ widget.id ]"
+      data-source="display.api[ widget.id ]"></widget>
+  </div>
+
 </div>
