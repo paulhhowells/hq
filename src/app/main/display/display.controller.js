@@ -13,9 +13,9 @@
     .module('app')
     .controller('DisplayController', DisplayController);
 
-  DisplayController.$inject = ['$scope', '$interval', 'widget', 'feed', 'user', 'settings', 'api'];
+  DisplayController.$inject = ['$scope', '$interval', 'widget', 'feed', 'user', 'preferences', 'api'];
 
-  function DisplayController ($scope, $interval, widget, feed, user, settings, api) {
+  function DisplayController ($scope, $interval, widget, feed, user, preferences, api) {
 
     // View Model.
     var
