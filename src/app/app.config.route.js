@@ -23,6 +23,17 @@
         controller  : 'DisplayController'
       })
 
+      .when('/drilling', {
+        templateUrl : '/main/drilling/drilling.view.html',
+        controllerAs: 'drilling',
+        controller  : 'DrillingController'
+      })
+      .when('/drilling/:key', {
+        templateUrl : '/main/drilling/drilling.view.html',
+        controllerAs: 'drilling',
+        controller  : 'DrillingController'
+      })
+
       // Route for the Settings view.
       .when('/settings', {
         templateUrl : '/main/settings/settings.view.html',
