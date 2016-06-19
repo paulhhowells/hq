@@ -13,12 +13,14 @@
     .module('app')
     .controller('DisplayController', DisplayController);
 
-  DisplayController.$inject = ['$scope', '$interval', 'widget', 'feed', 'user', 'settings'];
+  DisplayController.$inject = ['$scope', '$interval', 'widget', 'feed', 'user', 'settings', 'api'];
 
-  function DisplayController ($scope, $interval, widget, feed, user, settings) {
+  function DisplayController ($scope, $interval, widget, feed, user, settings, api) {
 
     // View Model.
-    var display = this;
+    var
+      display = this,
+      displayList;
 
     display.title = 'Display';
     display.widget = widget;
@@ -26,17 +28,10 @@
     display.user = user;
     display.pod = settings.pod;
 
-    var filler = [
-      { display : 'filler' },
-      { display : 'filler' },
-      { display : 'filler' }
-    ];
-    var displayList = [].concat(widget.displayList.get(), filler);
 
-    display.getWidgets = function () {
-      console.log('getWidgets');
-      return displayList;
-    };
+    displayList = widget.displayList.getWithFiller();
+
+
 
     $scope.$on('$routeChangeSuccess', function (event) {
       console.log('display $routeChangeSuccess');
@@ -45,5 +40,11 @@
     $scope.$on('$viewContentLoaded', function (event) {
       console.log('display $viewContentLoaded');
     });
+
+    function getWidgets () {
+      console.log('getWidgets');
+      return displayList;
+    }
+
   }
 })();
