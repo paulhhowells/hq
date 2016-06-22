@@ -1,0 +1,27 @@
+# API stub
+#
+# For use with stubby4node http://stub.by/4node
+# To install: npm install -g stubby
+# To run stub server: `stubby -d /path/to/api.yaml -w`
+# Server listens on http://localhost:8882 by default
+
+# Ping
+- request:
+    url: /v1/ping
+  response:
+    status: 200
+    body: "I'm alive!"
+    headers:
+      Content-Type: text/plain
+
+# Metrics
+- request:
+    url: /v1/metrics
+    method: GET
+  response:
+    status: 200
+    file: api/metrics/success.json
+    latency: 250
+    headers:
+      Content-Type: application/json
+      Access-Control-Allow-Headers: X-Auth-Token
