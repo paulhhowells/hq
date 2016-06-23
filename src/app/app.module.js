@@ -7,6 +7,6 @@
    * @description
    *   Base module for the app application.
    */
-  angular.module('app', ['ngRoute', 'chart']);
+  angular.module('app', ['ngRoute', 'ngAria', 'chart']);
 
 })();

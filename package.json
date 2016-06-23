@@ -24,12 +24,12 @@
   "homepage": "https://github.com/paulhhowells/hq#readme",
   "dependencies": {
     "angular": "^1.5.6",
+    "angular-aria": "^1.5.7",
     "angular-route": "^1.5.6",
     "d3": "^3.5.17",
     "jquery": "^2.2.4"
   },
   "devDependencies": {
-    "gulp-ngdocs": "^0.2.13",
     "angular-animate": "^1.5.6",
     "angular-mocks": "^1.5.6",
     "del": "^2.2.0",
@@ -48,6 +48,7 @@
     "gulp-insert": "^0.5.0",
     "gulp-istanbul": "^0.10.4",
     "gulp-load-plugins": "^1.2.4",
+    "gulp-ngdocs": "^0.2.13",
     "gulp-open": "^2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
