@@ -15,15 +15,14 @@
   MainController.$inject = ['$scope', '$route', '$routeParams', '$location'];
 
   function MainController ($scope, $route, $routeParams, $location) {
-
     // A reference to the View Model.
-    var vm = this;
+    var main = this;
 
-    vm.title = 'Main';
+    main.title = 'Main';
 
-    vm.$route = $route;
-    vm.$location = $location;
-    vm.$routeParams = $routeParams;
+    main.$route = $route;
+    main.$location = $location;
+    main.$routeParams = $routeParams;
 
     $scope.$on('$routeChangeSuccess', function(event) {
       //console.log('Main $routeChangeSuccess');
