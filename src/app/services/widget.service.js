@@ -11,15 +11,21 @@
     .module('app')
     .factory('widget', widgetService);
 
-  widgetService.$inject = ['feed'];
+  widgetService.$inject = ['time'];
 
-  function widgetService (feed) {
+  function widgetService (time) {
     var
       core = [],
       coreIndex = {},
       displayList = [],
       displayListIndex = {},
       service = {
+        DISPLAY : {
+          FILLER : 'FILLER',
+          PIE : 'PIE',
+          BAR : 'BAR',
+          GAUGE : 'GAUGE'
+        },
         displayList : {
           get : getDisplayList,
           getWithFiller : getDisplayListWithFiller,
@@ -56,11 +62,21 @@
       updateDisplayList(id);
     }
 
-    function newWidget (id) {
+    function newWidget (widgetId) {
       return {
-        id : id,
+        id : widgetId,
         display : service.displayOptions[0].id,
-        selected : true
+        selected : true,
+        name : 'Widget Name ' + widgetId,
+        request : {
+          id : null, // To be set by directive.
+          date : time.TODAY,
+          services : [],
+          statuses : [],
+          excludedServices : [],
+          excludedStatuses : [],
+          type : 'TYPE'
+        }
       };
     }
 
@@ -185,7 +201,7 @@
 
     function getDisplayListWithFiller () {
       var
-        fill = { display : 'filler' },
+        fill = { display : service.DISPLAY.FILLER },
         filler = [
           fill,
           fill,
