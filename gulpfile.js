@@ -414,14 +414,15 @@ function sass () {
  * Create Style Guide Documentation from Sass.
  */
 gulp.task('hologram', function() {
+  var config = { logging : true };
+
   gulp
     .src('styleguide/hologram_config.yml')
-    .pipe(plug.hologram());
+    .pipe(plug.hologram(config));
 });
 
 gulp.task('build', ['clean-dist', 'html', 'angular', 'scss', 'clean-tmp']);
 
 gulp.task('default', function () {
-  gulp.start('clean-coverage', 'lint', 'test', 'doc', 'build');
   gulp.start('clean-coverage', 'lint', 'test', 'doc', 'build', 'hologram');
 });
