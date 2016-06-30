@@ -35,10 +35,10 @@
       })
 
       // Route for the Settings view.
-      .when('/settings', {
-        templateUrl : '/main/settings/settings.view.html',
-        controllerAs: 'settings',
-        controller  : 'SettingsController'
+      .when('/preferences', {
+        templateUrl : '/main/preferences/preferences.view.html',
+        controllerAs: 'preferences',
+        controller  : 'PreferencesController'
       })
 
       .otherwise({
