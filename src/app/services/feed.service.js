@@ -19,6 +19,7 @@
     var
       feed = {
         // Methods.
+        getResources : getResources,
         getFeedType : newGetFeedType(),
 
         // Constants.
@@ -61,6 +62,72 @@
         index = type + day;
         return lookUpTruthTable[index];
       }
+    }
+
+    function getResources () {
+      var
+        feedRequest = {},
+        widgetDisplayList,
+        excludedServices,
+        excludedStatuses,
+        configData,
+        statusTodayConfigData,
+        statusYesterdayConfigData,
+        serviceTodayConfigData,
+        serviceYesterdayConfigData;
+
+      // todo: inject accountNumber contractNumbers
+
+      // Derive exclusions from permissions
+      excludedServices = permissions.getExcludedServices();
+      excludedStatuses = permissions.getExcludedStatuses();
+
+      widgetDisplayList = widget.displayList.get();
+
+      configData = {
+        accountNumber : 133242,
+        contractNumber : 3452
+      };
+      if (excludedStatuses.length) {
+        configData.excludedStatuses = excludedStatuses;
+      }
+      if (excludedServices.length) {
+        configData.excludedServices = excludedServices;
+      }
+
+      // if status today required (by widgets)
+      statusTodayConfigData = angular.copy(configData);
+      statusTodayConfigData.expectedDeliveryDate = time.TODAY;
+      feedRequest.statusToday = {
+        url : config.api.base + config.api.metrics.statusToday,
+        data : statusTodayConfigData
+      };
+
+      // if status yesterday required
+      statusYesterdayConfigData = angular.copy(configData);
+      statusYesterdayConfigData.expectedDeliveryDate = time.YESTERDAY;
+      feedRequest.statusYesterday = {
+        url : config.api.base + config.api.metrics.statusYesterday,
+        data : statusYesterdayConfigData
+      };
+
+      // if service today required
+      serviceTodayConfigData = angular.copy(configData);
+      serviceTodayConfigData.expectedDeliveryDate = time.TODAY;
+      feedRequest.serviceToday = {
+        url : config.api.base + config.api.metrics.serviceToday,
+        data : serviceTodayConfigData
+      };
+
+      // if service yesterday required
+      serviceYesterdayConfigData = angular.copy(configData);
+      serviceYesterdayConfigData.expectedDeliveryDate = time.YESTERDAY;
+      feedRequest.serviceYesterday = {
+        url : config.api.base + config.api.metrics.serviceYesterday,
+        data : serviceYesterdayConfigData
+      };
+
+      return feedRequest;
     }
   }
 })();
