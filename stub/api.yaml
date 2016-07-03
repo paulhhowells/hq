@@ -2,7 +2,7 @@
 #
 # For use with stubby4node http://stub.by/4node
 # To install: npm install -g stubby
-# To run stub server: `stubby -d /path/to/api.yaml -w`
+# To run stub server: `stubby -d /path/to/api.yaml -s 8882 -w`
 # Server listens on http://localhost:8882 by default
 
 # Ping
